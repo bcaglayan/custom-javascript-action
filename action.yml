@@ -11,6 +11,9 @@ inputs:
   autoTestRun:
     required: false
     description: "Run tests"
+  loadPredefiendModule:
+    required: false
+    description: "Load predefiend module"
 outputs:
   time: # id of output
     description: 'The time we greeted you'

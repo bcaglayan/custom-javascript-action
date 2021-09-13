@@ -15,7 +15,8 @@ async function run() {
         
         const command = core.getInput('command');
         const autoTestRun = core.getInput('autoTestRun');
-        //core.exportVariable('NODE_OPTIONS', '-r ./abc');
+        const loadPredefiendModule = core.getInput('loadPredefiendModule');
+       
         // export NODE_OPTIONS='-r epsagon-frameworks'
         // `who-to-greet` input defined in action metadata file
         const nameToGreet = core.getInput('who-to-greet');
@@ -26,6 +27,10 @@ async function run() {
         // const payload = JSON.stringify(github.context.payload, undefined, 2)
         // console.log(`The event payload: ${payload}`);
         
+        if (loadPredefiendModule) {
+            core.exportVariable('NODE_OPTIONS', '-r ttt');
+        }
+
         if (command) {
             core.info(`[Thundra] Executing the command`)
             await exec.exec(`sh -c "${command}"`)

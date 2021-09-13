@@ -5,6 +5,12 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  apikey:
+    required: true
+    description: "Thundra's API Key"
+  project_id:
+    required: true
+    description: "Thundra's Test Project ID"
   command:
     required: false
     description: "Command to run your tests"

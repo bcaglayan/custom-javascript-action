@@ -13,6 +13,26 @@ const JEST_DEFAULT_ARGUMENTS = [
 async function run() {
     try {
         
+        const apikey = core.getInput('apikey')
+        const project_id = core.getInput('project_id');
+
+        if (!apikey) {
+            core.warning('Thundra API Key is not present. Exiting early...')
+            core.warning('Instrumentation failed.')
+        
+            process.exit(core.ExitCode.Success)
+        }
+        
+        if (!project_id) {
+            core.warning('Thundra Project ID is not present. Exiting early...')
+            core.warning('Instrumentation failed.')
+        
+            process.exit(core.ExitCode.Success)
+        }
+
+        core.exportVariable('THUNDRA_APIKEY', apikey)
+        core.exportVariable('THUNDRA_AGENT_TEST_PROJECT_ID', project_id)
+
         const command = core.getInput('command');
         const autoTestRun = core.getInput('autoTestRun');
         const loadPredefiendModule = core.getInput('loadPredefiendModule');

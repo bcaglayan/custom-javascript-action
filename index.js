@@ -2,6 +2,9 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
+
+    core.exportVariable('NODE_OPTIONS', '-r ./abc');
+    // export NODE_OPTIONS='-r epsagon-frameworks'
     // `who-to-greet` input defined in action metadata file
     const nameToGreet = core.getInput('who-to-greet');
     console.log(`Hello ${nameToGreet}!`);

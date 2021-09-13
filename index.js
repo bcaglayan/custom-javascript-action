@@ -4,8 +4,11 @@ const exec = require('@actions/exec');
 
 const JEST_DEFAULT_ARGUMENTS = [
     '--testRunner=jest-circus/runner',
-    '--env=ttt/test-environment.js'
+    '--env=@thundra/core/dist/ForesightBootstrap.js'
+    // '--env=ttt/test-environment.js'
 ];
+
+// --testRunner=jest-circus/runner --env=@thundra/core/dist/ForesightBootstrap.js
 
 async function run() {
     try {

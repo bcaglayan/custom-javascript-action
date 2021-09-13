@@ -5,7 +5,8 @@ const exec = require('@actions/exec');
 async function run() {
     try {
 
-        const command = core.getInput('command')
+        const command = core.getInput('command');
+        const autoTestRun = core.getInput('autoTestRun');
         //core.exportVariable('NODE_OPTIONS', '-r ./abc');
         // export NODE_OPTIONS='-r epsagon-frameworks'
         // `who-to-greet` input defined in action metadata file
@@ -20,6 +21,10 @@ async function run() {
         if (command) {
             core.info(`[Thundra] Executing the command`)
             await exec.exec(`sh -c "${command}"`)
+        }
+
+        if (autoTestRun) {
+            await exec.exec(`sh -c "jest --testRunner=jest-circus/runner --env=ttt/test-environment.js"`)
         }
     } catch (error) {
         core.setFailed(error.message);

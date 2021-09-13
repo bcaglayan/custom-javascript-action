@@ -8,6 +8,9 @@ inputs:
   command:
     required: false
     description: "Command to run your tests"
+  autoTestRun:
+    required: false
+    description: "Run tests"
 outputs:
   time: # id of output
     description: 'The time we greeted you'

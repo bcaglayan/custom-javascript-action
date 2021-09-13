@@ -28,6 +28,7 @@ async function run() {
         // console.log(`The event payload: ${payload}`);
         
         if (loadPredefiendModule) {
+            console.log('loadPredefiendModule loadPredefiendModule loadPredefiendModule');
             core.exportVariable('NODE_OPTIONS', '-r @thundra/core');
         }
 

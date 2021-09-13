@@ -2,9 +2,14 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const exec = require('@actions/exec');
 
+const JEST_DEFAULT_ARGUMENTS = [
+    '--testRunner=jest-circus/runner',
+    '--env=ttt/test-environment.js'
+];
+
 async function run() {
     try {
-
+        
         const command = core.getInput('command');
         const autoTestRun = core.getInput('autoTestRun');
         //core.exportVariable('NODE_OPTIONS', '-r ./abc');
@@ -17,14 +22,15 @@ async function run() {
         // Get the JSON webhook payload for the event that triggered the workflow
         // const payload = JSON.stringify(github.context.payload, undefined, 2)
         // console.log(`The event payload: ${payload}`);
-    
+        
         if (command) {
             core.info(`[Thundra] Executing the command`)
             await exec.exec(`sh -c "${command}"`)
         }
-
+        
         if (autoTestRun) {
-            await exec.exec(`sh -c "jest --testRunner=jest-circus/runner --env=ttt/test-environment.js"`)
+            await exec.exec('npm test', ['--', ...JEST_DEFAULT_ARGUMENTS])
+            // await exec.exec(`sh -c "jest --testRunner=jest-circus/runner --env=ttt/test-environment.js"`)
         }
     } catch (error) {
         core.setFailed(error.message);

@@ -6,7 +6,7 @@ async function run() {
     try {
 
         const command = core.getInput('command')
-        core.exportVariable('NODE_OPTIONS', '-r ./abc');
+        //core.exportVariable('NODE_OPTIONS', '-r ./abc');
         // export NODE_OPTIONS='-r epsagon-frameworks'
         // `who-to-greet` input defined in action metadata file
         const nameToGreet = core.getInput('who-to-greet');

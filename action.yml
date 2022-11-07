@@ -1,28 +1,9 @@
 name: 'Custom Action'
-description: 'Greet someone and record the time'
+description: 'b&t&h&n tryer'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  tags_input_tryer:
     required: true
-    default: 'World'
-  apikey:
-    required: true
-    description: "Thundra's API Key"
-  project_id:
-    required: true
-    description: "Thundra's Test Project ID"
-  command:
-    required: false
-    description: "Command to run your tests"
-  autoTestRun:
-    required: false
-    description: "Run tests"
-  loadPredefiendModule:
-    required: false
-    description: "Load predefiend module"
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    description: "Tryer"
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'

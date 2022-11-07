@@ -10,4 +10,4 @@ jobs:
         id: hello
         uses: bcaglayan/custom-javascript-action@v20
         with:
-          tags_input_tryer: 'comolokko'
+          tags_input_tryer: ${{ github.actor }}

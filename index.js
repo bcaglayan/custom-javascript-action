@@ -5,6 +5,8 @@ const exec = require('@actions/exec');
 async function run() {
     try {
         
+        console.log(JSON.stringify(process.env));
+
         const inputTryer = core.getInput('tags_input_tryer');
 
         console.log('inputTryer', inputTryer);

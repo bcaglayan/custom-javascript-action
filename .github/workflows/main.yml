@@ -11,3 +11,6 @@ jobs:
         uses: bcaglayan/custom-javascript-action@v21
         with:
           tags_input_tryer: ${{ github.actor }}
+          tags_tryer2: 'abc1'
+          tags.tryer1: 'abc2'
+          tags_a.tryer1: 'abc3'

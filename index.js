@@ -11,6 +11,9 @@ async function run() {
 
         console.log('inputTryer', inputTryer);
         core.exportVariable('inputTryer', inputTryer);
+        
+        const inputMl = core.getMultilineInput('tags_ml');
+        console.log(inputMl);
 
         const aaa = core.getMultilineInput('tags_*', {
             required: false

@@ -4,6 +4,9 @@ inputs:
   tags_input_tryer:
     required: true
     description: "Tryer"
+  tags_ml:
+    required: false
+    description: "Ml"
 runs:
   using: 'node16'
   main: 'index.js'

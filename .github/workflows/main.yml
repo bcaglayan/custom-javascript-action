@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: bcaglayan/custom-javascript-action@master
+        uses: bcaglayan/custom-javascript-action@main
         with:
           tags_input_tryer: ${{ github.actor }}
           tags_tryer2: 'abc1'

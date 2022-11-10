@@ -14,7 +14,8 @@ jobs:
           tags_tryer2: 'abc1'
           tags.tryer1: 'abc2'
           tags_a.tryer1: 'abc3'
-          tags_ml: |
-            author1: "${{ github.actor }}"
-            author2: ${{ github.actor }}
-            abc: ttt
+          tags_ml: "${{ github.actor }}"
+            #|
+            #author1: "${{ github.actor }}"
+            #author2: ${{ github.actor }}
+            #abc: ttt
